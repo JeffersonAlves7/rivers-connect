@@ -56,8 +56,8 @@ export default async function LocaleLayout({
         <NextIntlClientProvider locale={locale} messages={messages}>
           <div className="relative flex min-h-screen flex-col">
             <Header />
-            {/* Added flex items-center justify-center to main */}
-            <main className="flex-1 flex flex-col items-center justify-center">{children}</main>
+            {/* Removed flex items-center justify-center to allow full-width sections */}
+            <main className="flex-1 flex flex-col">{children}</main>
             <Footer />
           </div>
           <Toaster />

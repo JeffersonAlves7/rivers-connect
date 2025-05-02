@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { MountainSnow } from 'lucide-react'; // Using MountainSnow as a placeholder logo
 import { useTranslations } from 'next-intl';
-import LanguageSwitcher from './language-switcher';
+import LanguageSwitcher from './language-switcher'; // Corrected import path
 
 export function Header() {
   const t = useTranslations('Header');
