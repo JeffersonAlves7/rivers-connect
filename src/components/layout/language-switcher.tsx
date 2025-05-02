@@ -23,20 +23,16 @@ export default function LanguageSwitcher() {
 
   const onSelectChange = (nextLocale: string) => {
     if (nextLocale !== locale) {
-      // Use locale parameter for the transition function
-      // Optional: Use startTransition if experiencing UI freezes during navigation
       React.startTransition(() => {
-        // WARNING: Basic replace using next/navigation.
-        // This won't automatically handle locale prefixes managed by next-intl.
-        // Proper locale switching likely requires restoring 'next-intl/navigation'.
-        // Attempting a basic path construction for diagnostics.
-        const newPath = `/${nextLocale}${pathname}`;
+        // Remove o locale atual do início do pathname (assume estrutura /[locale]/resto)
+        const pathWithoutLocale = pathname.replace(/^\/[a-z]{2}(\/|$)/, '/');
+        // Constrói a nova URL com o locale selecionado
+        const newPath = `/${nextLocale}${pathWithoutLocale}`;
         router.replace(newPath);
       });
     }
   };
-
-
+  
   return (
     <Select value={locale} onValueChange={onSelectChange}>
       <SelectTrigger
