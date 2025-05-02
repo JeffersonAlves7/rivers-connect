@@ -42,6 +42,7 @@ export default {
   			},
   			border: 'hsl(var(--border))',
   			input: 'hsl(var(--input))',
+        'input-border': 'hsl(var(--input-border))', // Added input-border
   			ring: 'hsl(var(--ring))',
   			chart: {
   				'1': 'hsl(var(--chart-1))',
