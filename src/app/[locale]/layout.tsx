@@ -6,7 +6,7 @@ import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { Toaster } from "@/components/ui/toaster";
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
+import { getMessages, getLocale } from 'next-intl/server'; // Import getLocale
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -20,7 +20,10 @@ const geistMono = Geist_Mono({
 
 // This metadata will apply to all pages under /[locale]
 // We can use getMessages here to fetch translations if needed.
-export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
+  // It's generally better to use getLocale() on the server if available
+  // If params.locale is needed specifically, ensure it's correctly passed and validated.
+  const locale = await getLocale();
   const messages = await getMessages({ locale });
   // Assuming you have 'Layout.metadataTitle' and 'Layout.metadataDescription' keys
   const t = (key: string) => messages.Layout?.[key as keyof typeof messages.Layout] || key;
@@ -34,12 +37,12 @@ export async function generateMetadata({ params: { locale } }: { params: { local
 
 export default async function LocaleLayout({
   children,
-  params: {locale}
+  params: {locale} // Keep locale from params for lang attribute and NextIntlClientProvider
 }: Readonly<{
   children: React.ReactNode;
   params: {locale: string};
 }>) {
-  const messages = await getMessages();
+  const messages = await getMessages(); // Fetch messages for the current locale
 
   return (
     <html lang={locale}>
@@ -53,7 +56,8 @@ export default async function LocaleLayout({
         <NextIntlClientProvider locale={locale} messages={messages}>
           <div className="relative flex min-h-screen flex-col">
             <Header />
-            <main className="flex-1">{children}</main>
+            {/* Added flex items-center justify-center to main */}
+            <main className="flex-1 flex flex-col items-center justify-center">{children}</main>
             <Footer />
           </div>
           <Toaster />
