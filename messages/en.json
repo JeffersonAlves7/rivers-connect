@@ -1,0 +1,68 @@
+{
+  "HeroSection": {
+    "title": "Rivers Software House",
+    "subtitle": "Driving Innovation with AI, Web Development, RPA, and Web Scraping Solutions.",
+    "getInTouchButton": "Get in Touch"
+  },
+  "ServicesSection": {
+    "title": "Our Expertise",
+    "subtitle": "We specialize in a range of technologies to build powerful and efficient solutions.",
+    "service1Title": "AI Technology",
+    "service1Desc": "Leveraging cutting-edge AI to build intelligent solutions that drive business value.",
+    "service2Title": "Website Development & Deployment",
+    "service2Desc": "Creating modern, responsive, and scalable web applications tailored to your needs.",
+    "service3Title": "Robotic Process Automation (RPA)",
+    "service3Desc": "Automating repetitive tasks to improve efficiency and reduce operational costs.",
+    "service4Title": "Web Scraping",
+    "service4Desc": "Extracting valuable data from the web to provide insights and power your applications."
+  },
+  "PortfolioSection": {
+    "title": "Our Work",
+    "subtitle": "Check out some of the innovative projects we've delivered for our clients.",
+    "project1Title": "AI-Powered Recommendation Engine",
+    "project1Desc": "Developed a personalized recommendation system increasing user engagement by 30%.",
+    "project2Title": "E-commerce Platform Overhaul",
+    "project2Desc": "Rebuilt a high-traffic e-commerce site, improving performance and scalability.",
+    "project3Title": "RPA for Invoice Processing",
+    "project3Desc": "Implemented RPA bots to automate invoice data entry, saving hundreds of hours.",
+    "project4Title": "Market Data Aggregator",
+    "project4Desc": "Built a web scraping solution to gather and analyze real-time market trends."
+  },
+  "ContactSection": {
+    "title": "Get in Touch",
+    "subtitle": "Have a project in mind or want to learn more? Send us a message!",
+    "nameLabel": "Name",
+    "namePlaceholder": "Your Name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "your.email@example.com",
+    "phoneLabel": "Phone (Optional)",
+    "phonePlaceholder": "Your Phone Number",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Tell us about your project or inquiry...",
+    "consentLabel": "Consent to Contact",
+    "consentDescription": "By checking this box, you agree to be contacted by Rivers Software House regarding your inquiry.",
+    "sendMessageButton": "Send Message",
+    "successToastTitle": "Message Sent!",
+    "successToastDescription": "Thank you for contacting us. We'll be in touch shortly.",
+    "errorToastTitle": "Error",
+    "errorToastDescription": "Failed to send message. Please try again later.",
+    "nameMinError": "Name must be at least 2 characters.",
+    "emailError": "Please enter a valid email address.",
+    "messageMinError": "Message must be at least 10 characters.",
+    "messageMaxError": "Message must not exceed 500 characters.",
+    "consentError": "You must consent to be contacted."
+  },
+  "Header": {
+    "siteName": "Rivers Software House"
+  },
+  "Footer": {
+    "copyright": "© {currentYear} Rivers Software House. All rights reserved."
+  },
+  "Layout": {
+    "metadataTitle": "Rivers Connect - Rivers Software House",
+    "metadataDescription": "Experts in AI, Website Development, RPA, and Web Scraping."
+  },
+  "LanguageSwitcher": {
+    "selectLanguageLabel": "Select Language"
+  }
+}

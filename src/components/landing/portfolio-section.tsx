@@ -2,47 +2,51 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-
-// Placeholder project data - In a real app, this would come from a CMS or markdown files
-const projects = [
-  {
-    title: 'AI-Powered Recommendation Engine',
-    description: 'Developed a personalized recommendation system increasing user engagement by 30%.',
-    imageUrl: 'https://picsum.photos/seed/recommend/600/400',
-    imageHint: 'abstract technology',
-    link: '#',
-  },
-  {
-    title: 'E-commerce Platform Overhaul',
-    description: 'Rebuilt a high-traffic e-commerce site, improving performance and scalability.',
-    imageUrl: 'https://picsum.photos/seed/ecommerce/600/400',
-    imageHint: 'online shopping website',
-    link: '#',
-  },
-  {
-    title: 'RPA for Invoice Processing',
-    description: 'Implemented RPA bots to automate invoice data entry, saving hundreds of hours.',
-    imageUrl: 'https://picsum.photos/seed/rpa/600/400',
-    imageHint: 'robot automation office',
-    link: '#',
-  },
-    {
-    title: 'Market Data Aggregator',
-    description: 'Built a web scraping solution to gather and analyze real-time market trends.',
-    imageUrl: 'https://picsum.photos/seed/scraping/600/400',
-    imageHint: 'data charts graphs',
-    link: '#',
-  },
-];
+import { useTranslations } from 'next-intl';
 
 export function PortfolioSection() {
+   const t = useTranslations('PortfolioSection');
+
+  // Placeholder project data - In a real app, this would come from a CMS or markdown files
+  const projects = [
+    {
+      title: t('project1Title'),
+      description: t('project1Desc'),
+      imageUrl: 'https://picsum.photos/seed/recommend/600/400',
+      imageHint: 'abstract technology',
+      link: '#',
+    },
+    {
+      title: t('project2Title'),
+      description: t('project2Desc'),
+      imageUrl: 'https://picsum.photos/seed/ecommerce/600/400',
+      imageHint: 'online shopping website',
+      link: '#',
+    },
+    {
+      title: t('project3Title'),
+      description: t('project3Desc'),
+      imageUrl: 'https://picsum.photos/seed/rpa/600/400',
+      imageHint: 'robot automation office',
+      link: '#',
+    },
+      {
+      title: t('project4Title'),
+      description: t('project4Desc'),
+      imageUrl: 'https://picsum.photos/seed/scraping/600/400',
+      imageHint: 'data charts graphs',
+      link: '#',
+    },
+  ];
+
+
   return (
     <section id="portfolio" className="w-full py-12 md:py-24 lg:py-32 bg-background">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-primary">Our Work</h2>
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-primary">{t('title')}</h2>
           <p className="max-w-[700px] text-muted-foreground md:text-xl">
-            Check out some of the innovative projects we've delivered for our clients.
+            {t('subtitle')}
           </p>
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2">

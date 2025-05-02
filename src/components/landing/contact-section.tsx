@@ -3,6 +3,7 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import * as z from 'zod';
+import { useTranslations } from 'next-intl';
 
 import { Button } from '@/components/ui/button';
 import {
@@ -22,28 +23,32 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 // Import server action if created
 // import { saveLeadAction } from '@/app/actions/saveLead';
 
-const formSchema = z.object({
-  name: z.string().min(2, {
-    message: 'Name must be at least 2 characters.',
-  }),
-  email: z.string().email({
-    message: 'Please enter a valid email address.',
-  }),
-  phone: z.string().optional(), // Making phone optional
-  message: z.string().min(10, {
-    message: 'Message must be at least 10 characters.',
-  }).max(500, {
-      message: 'Message must not exceed 500 characters.'
-  }),
-  consent: z.boolean().refine(val => val === true, {
-    message: 'You must consent to be contacted.',
-  }),
-});
-
-type FormData = z.infer<typeof formSchema>;
 
 export function ContactSection() {
+  const t = useTranslations('ContactSection');
   const { toast } = useToast();
+
+  // Define Zod schema inside the component to access `t`
+  const formSchema = z.object({
+    name: z.string().min(2, {
+      message: t('nameMinError'),
+    }),
+    email: z.string().email({
+      message: t('emailError'),
+    }),
+    phone: z.string().optional(), // Making phone optional
+    message: z.string().min(10, {
+      message: t('messageMinError'),
+    }).max(500, {
+        message: t('messageMaxError')
+    }),
+    consent: z.boolean().refine(val => val === true, {
+      message: t('consentError'),
+    }),
+  });
+
+  type FormData = z.infer<typeof formSchema>;
+
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -65,15 +70,15 @@ export function ContactSection() {
         // await saveLeadAction(values);
 
         toast({
-            title: "Message Sent!",
-            description: "Thank you for contacting us. We'll be in touch shortly.",
+            title: t('successToastTitle'),
+            description: t('successToastDescription'),
         });
         form.reset(); // Reset form on success
     } catch (error) {
         console.error("Failed to send message:", error);
         toast({
-            title: "Error",
-            description: "Failed to send message. Please try again later.",
+            title: t('errorToastTitle'),
+            description: t('errorToastDescription'),
             variant: "destructive",
         });
     }
@@ -84,9 +89,9 @@ export function ContactSection() {
       <div className="container px-4 md:px-6">
        <Card className="max-w-2xl mx-auto shadow-lg">
          <CardHeader className="text-center">
-           <CardTitle className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-primary">Get in Touch</CardTitle>
+           <CardTitle className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-primary">{t('title')}</CardTitle>
            <CardDescription className="mt-2 text-muted-foreground md:text-xl">
-            Have a project in mind or want to learn more? Send us a message!
+            {t('subtitle')}
            </CardDescription>
          </CardHeader>
          <CardContent>
@@ -97,9 +102,9 @@ export function ContactSection() {
                   name="name"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Name</FormLabel>
+                      <FormLabel>{t('nameLabel')}</FormLabel>
                       <FormControl>
-                        <Input placeholder="Your Name" {...field} />
+                        <Input placeholder={t('namePlaceholder')} {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -110,9 +115,9 @@ export function ContactSection() {
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Email</FormLabel>
+                      <FormLabel>{t('emailLabel')}</FormLabel>
                       <FormControl>
-                        <Input type="email" placeholder="your.email@example.com" {...field} />
+                        <Input type="email" placeholder={t('emailPlaceholder')} {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -123,9 +128,9 @@ export function ContactSection() {
                   name="phone"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Phone (Optional)</FormLabel>
+                      <FormLabel>{t('phoneLabel')}</FormLabel>
                       <FormControl>
-                        <Input type="tel" placeholder="Your Phone Number" {...field} />
+                        <Input type="tel" placeholder={t('phonePlaceholder')} {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -136,9 +141,9 @@ export function ContactSection() {
                   name="message"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Message</FormLabel>
+                      <FormLabel>{t('messageLabel')}</FormLabel>
                       <FormControl>
-                        <Textarea placeholder="Tell us about your project or inquiry..." {...field} rows={5}/>
+                        <Textarea placeholder={t('messagePlaceholder')} {...field} rows={5}/>
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -157,10 +162,10 @@ export function ContactSection() {
                       </FormControl>
                       <div className="space-y-1 leading-none">
                         <FormLabel>
-                          Consent to Contact
+                          {t('consentLabel')}
                         </FormLabel>
                         <FormDescription>
-                          By checking this box, you agree to be contacted by Rivers Software House regarding your inquiry.
+                          {t('consentDescription')}
                         </FormDescription>
                          <FormMessage />
                       </div>
@@ -168,7 +173,7 @@ export function ContactSection() {
                   )}
                 />
                 <Button type="submit" className="w-full" variant="accent">
-                  Send Message
+                  {t('sendMessageButton')}
                 </Button>
               </form>
             </Form>
@@ -178,4 +183,3 @@ export function ContactSection() {
     </section>
   );
 }
-

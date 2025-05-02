@@ -1,0 +1,68 @@
+{
+  "HeroSection": {
+    "title": "Rivers Software House",
+    "subtitle": "Impulsionando a Inovação com Soluções de IA, Desenvolvimento Web, RPA e Web Scraping.",
+    "getInTouchButton": "Entre em Contato"
+  },
+  "ServicesSection": {
+    "title": "Nossa Expertise",
+    "subtitle": "Somos especializados em uma gama de tecnologias para construir soluções poderosas e eficientes.",
+    "service1Title": "Tecnologia de IA",
+    "service1Desc": "Utilizando IA de ponta para construir soluções inteligentes que agregam valor ao negócio.",
+    "service2Title": "Desenvolvimento e Implantação de Websites",
+    "service2Desc": "Criando aplicações web modernas, responsivas e escaláveis, adaptadas às suas necessidades.",
+    "service3Title": "Automação Robótica de Processos (RPA)",
+    "service3Desc": "Automatizando tarefas repetitivas para melhorar a eficiência e reduzir custos operacionais.",
+    "service4Title": "Web Scraping",
+    "service4Desc": "Extraindo dados valiosos da web para fornecer insights e potencializar suas aplicações."
+  },
+  "PortfolioSection": {
+    "title": "Nosso Trabalho",
+    "subtitle": "Confira alguns dos projetos inovadores que entregamos para nossos clientes.",
+    "project1Title": "Motor de Recomendação com IA",
+    "project1Desc": "Desenvolvemos um sistema de recomendação personalizado que aumentou o engajamento do usuário em 30%.",
+    "project2Title": "Reformulação de Plataforma E-commerce",
+    "project2Desc": "Reconstruímos um site de e-commerce de alto tráfego, melhorando o desempenho e a escalabilidade.",
+    "project3Title": "RPA para Processamento de Faturas",
+    "project3Desc": "Implementamos bots RPA para automatizar a entrada de dados de faturas, economizando centenas de horas.",
+    "project4Title": "Agregador de Dados de Mercado",
+    "project4Desc": "Construímos uma solução de web scraping para coletar e analisar tendências de mercado em tempo real."
+  },
+  "ContactSection": {
+    "title": "Entre em Contato",
+    "subtitle": "Tem um projeto em mente ou quer saber mais? Envie-nos uma mensagem!",
+    "nameLabel": "Nome",
+    "namePlaceholder": "Seu Nome",
+    "emailLabel": "Email",
+    "emailPlaceholder": "seu.email@example.com",
+    "phoneLabel": "Telefone (Opcional)",
+    "phonePlaceholder": "Seu Número de Telefone",
+    "messageLabel": "Mensagem",
+    "messagePlaceholder": "Conte-nos sobre seu projeto ou consulta...",
+    "consentLabel": "Consentimento para Contato",
+    "consentDescription": "Ao marcar esta caixa, você concorda em ser contatado pela Rivers Software House sobre sua consulta.",
+    "sendMessageButton": "Enviar Mensagem",
+    "successToastTitle": "Mensagem Enviada!",
+    "successToastDescription": "Obrigado por entrar em contato conosco. Entraremos em contato em breve.",
+    "errorToastTitle": "Erro",
+    "errorToastDescription": "Falha ao enviar mensagem. Por favor, tente novamente mais tarde.",
+    "nameMinError": "O nome deve ter pelo menos 2 caracteres.",
+    "emailError": "Por favor, insira um endereço de email válido.",
+    "messageMinError": "A mensagem deve ter pelo menos 10 caracteres.",
+    "messageMaxError": "A mensagem não deve exceder 500 caracteres.",
+    "consentError": "Você deve consentir em ser contatado."
+  },
+  "Header": {
+    "siteName": "Rivers Software House"
+  },
+  "Footer": {
+    "copyright": "© {currentYear} Rivers Software House. Todos os direitos reservados."
+  },
+  "Layout": {
+    "metadataTitle": "Rivers Connect - Rivers Software House",
+    "metadataDescription": "Especialistas em IA, Desenvolvimento Web, RPA e Web Scraping."
+  },
+  "LanguageSwitcher": {
+    "selectLanguageLabel": "Selecionar Idioma"
+  }
+}
